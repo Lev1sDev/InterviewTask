@@ -1,4 +1,4 @@
-import datetime
+import datetime as dt
 
 from dummy_server.server import get_random_request
 
@@ -30,7 +30,7 @@ def image_handler(request):
 
     if ext[0] == 'jpg':
         return image[:ext[1]]
-    return request.get('ts') - datetime.timedelta(hours=24)
+    return request.get('ts') - dt.timedelta(hours=24)
 
 
 def video_handler(request):
@@ -72,8 +72,7 @@ if __name__ == "__main__":
         # Ignore image and video requests
         # if they were sent more than 4 days ago
         if (request.get('type') in ('image', 'video') and
-                request.get('ts') <
-                datetime.datetime.now() - datetime.timedelta(days=4)):
+                request.get('ts') < dt.datetime.now() - dt.timedelta(days=4)):
             continue
         print(request)
         if request.get('type') == 'text':
