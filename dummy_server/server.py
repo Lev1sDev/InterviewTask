@@ -1,7 +1,9 @@
 import random
-from dummy_server.constants import RequestType, DUMMY_MESSAGES, DUMMY_IMAGES, DUMMY_VIDEOS, DUMMY_SOUNDS
 from datetime import datetime
 from time import time
+
+from dummy_server.constants import (DUMMY_IMAGES, DUMMY_MESSAGES, DUMMY_SOUNDS,
+                                    DUMMY_VIDEOS, RequestType)
 
 
 def get_random_request():
