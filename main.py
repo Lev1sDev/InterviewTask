@@ -2,6 +2,7 @@ import datetime as dt
 
 from dummy_server.server import get_random_request
 
+
 # Dummy server generates random requests,
 # your goal is to process them as per task requirements (see README.md)
 
@@ -11,6 +12,8 @@ def text_handler(request):
 
     if date.weekday() in (5, 6):
         if date.weekday() == 5:
+            # link to Emoji list
+            # https://unicode.org/emoji/charts/emoji-list.html#0037_fe0f_20e3
             return "\U00000035"
         return "\U00000036"
 
